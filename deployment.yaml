@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springmusic
+  labels:
+    app: springmusic
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: springmusic
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: springmusic
+        tier: backend
+    spec:
+      containers:
+      - name: springmusic
+        image: ${IMAGE}:${BEFOREJOB_BUILD_NUMBER}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "50m"
+          limits: 
+            memory: "1Gi" 
+            cpu: "500m"
+        ports:
+        - containerPort: 8080 
