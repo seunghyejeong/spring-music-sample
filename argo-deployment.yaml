@@ -6,7 +6,7 @@ metadata:
     app: argomusic-deployment
   namespace: test
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: argomusic-deployment
