@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: argomusic-deployment
-        image: harbor.180.210.80.52.nip.io:443/p-admin-harbor/argomusic:latest
+        image: harbor.180.210.80.52.nip.io:443/p-admin-harbor/argomusic:1
         imagePullPolicy: Always
         resources:
           requests:
